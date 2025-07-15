@@ -129,7 +129,7 @@ const Navbar = () => {
           >
             Contact{" "}
             <Image
-              src={theme ? assets.right_arrow_white : assets.arrow_icon}
+              src={isDarkMode ? assets.right_arrow_white : assets.arrow_icon}
               alt=""
               className="w-3"
             />
@@ -137,7 +137,7 @@ const Navbar = () => {
 
           <button className="block md:hidden ml-3" onClick={openMenu}>
             <Image
-              src={theme ? assets.menu_white : assets.menu_black}
+              src={isDarkMode ? assets.menu_white : assets.menu_black}
               alt=""
               className="w-6"
             />
