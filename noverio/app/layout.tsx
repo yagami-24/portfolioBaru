@@ -1,4 +1,4 @@
-// app/laout.js
+import { ThemeProvider } from "./componentNope/theme-provider";
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 
@@ -22,11 +22,17 @@ export const metadata = {
 
 export default function RootLayout({ children }: {children: any}) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body
-         className={`${outfit.variable} ${ovo.variable} antialiased leading-8 overflow-x-hidden dark:bg-black`}
+         className={`${outfit.variable} ${ovo.variable} antialiased leading-8 overflow-x-hidden dark:bg-[#11001F]`}
+      ><ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
       >
         {children}
+        </ThemeProvider>
       </body>
     </html>
   );
